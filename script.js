@@ -1,6 +1,7 @@
 const input = document.querySelector("input");
 const btn = document.querySelector(".addbtn");
 const todocontainer = document.querySelector(".tdcont");
+const inputbox = document.querySelector(".todo");
 // const del=document.querySelectorAll(".del");
 var todos = localStorage.getItem("todos");
 // var arrdell=document.querySelectorAll(".del");
@@ -509,5 +510,3 @@ closebtn.addEventListener("click", (e) => {
 card4btn.addEventListener("click", (e) => {
   e.target.parentElement.parentElement.classList.add("rotate");
 });
-
-
