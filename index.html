@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body onload="initClock()">
+    <div class="container">
+      <div class="timecontainer">
+        <div class="date">
+          <span id="dayname">Day</span>,
+          <span id="month">Month</span>
+          <span id="daynum">00</span>,
+          <span id="year">Year</span>
+        </div>
+        <div class="time">
+          <span id="hour">00</span>: <span id="minutes">00</span>:
+          <span id="seconds">00</span>
+          <span id="period">AM</span>
+        </div>
+      </div>
+      <div class="todoaddcontainer">
+        <input class="todo" type="text" />
+        <button class="addbtn">+</button>
+      </div>
+      <div class="tdcont"></div>
+    </div>
+    <div class="cardqoute" id="card1">
+      <div class="thecard">
+        <div class="front">
+          <div class="textauthor">
+            <span class="text">Front of the card</span>
+            <span class="author">author</span>
+          </div>
+
+          <button class="new-quote">Next qoute</button>
+        </div>
+        <div class="back">
+          <div class="textauthor">
+            <span class="text">Front of the card</span>
+            <span class="author">author</span>
+          </div>
+
+          <button class="new-quote">Next qoute</button>
+        </div>
+      </div>
+    </div>
+    <div class="cardqoute" id="card2">
+      <div class="thecard card2thecard">
+        <div class="front">
+          <button class="card2button">Text-Editor!</button>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="cardqoute" id="card3">
+      <div class="thecard">
+        <div class="front">
+          <div id="videoembed1" class="embed-container">
+            <iframe
+              width="640"
+              height="390"
+              frameborder="0"
+              title="YouTube video player"
+              type="text/html"
+              src="https://www.youtube.com/embed/5qap5aO4i9A?feature=oembed&modestbranding=1&controls=0&hd=1&modestbranding=1&autohide=1&showinfo=0&enablejsapi=1&showinfo=0"
+            ></iframe>
+          </div>
+          <div class="musiccontrols">
+            <a href='javascript:void callPlayer("videoembed1","playVideo")'
+              ><i class="material-icons md-dark md-36">play_arrow</i></a
+            >
+            <a href='javascript:void callPlayer("videoembed1","pauseVideo")'
+              ><i class="material-icons md-dark md-36">pause</i></a
+            >
+            <a href='javascript:void callPlayer("videoembed1","stopVideo")'
+              ><i class="material-icons md-dark md-36">stop</i></a
+            >
+          </div>
+        </div>
+        <div class="back">
+          <div class="textauthor">
+            <button class="card3button">Next qoute</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cardqoute" id="card4">
+      <div class="thecard card4thecard">
+        <div class="front">
+          <button class="card4button">Whiteboard!</button>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+
+    <!-- text-editor code -->
+
+    <div id="page-wrapper" class="clearfix">
+      <button class="close">X</button>
+      <h1 class="title">Text Editor</h1>
+      <form action="#" method="POST" id="file-form">
+        <div class="field">
+          <input
+            type="text"
+            name="filename"
+            id="filename"
+            placeholder="Filename (e.g. treehouse.txt)"
+          />
+        </div>
+        <div class="field">
+          <textarea
+            name="content"
+            id="content"
+            placeholder="Type your content here..."
+          ></textarea>
+        </div>
+        <div class="field">
+          <button class="submit" type="submit">Save File</button>
+          <div id="messages"></div>
+        </div>
+      </form>
+
+      <div id="files">
+        <h2 class="filetitle">File Browser</h2>
+        <ul id="file-list"></ul>
+      </div>
+    </div>
+
+    <!-- text-editor code ends here -->
+  </body>
+  <script src="script.js"></script>
+</html>

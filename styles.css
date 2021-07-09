@@ -1,0 +1,543 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url(background.png);
+  background-size: cover;
+}
+input[type="text"]:focus {
+  outline: none;
+  padding-left: 10px;
+}
+.container {
+  width: 35vw;
+  height: 80vh;
+
+  margin: auto;
+  margin-top: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+/* time section css starts here */
+.timecontainer {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+  /* padding-left: 10px; */
+
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 20px 20px 0px 0px;
+}
+.date,
+.time {
+  color: white;
+  font-size: 30px;
+  word-spacing: 1.5;
+  line-height: 1.5;
+  margin-left: 10px;
+}
+#period {
+  /* font-size:30px; */
+  /* font-weight: 600; */
+  padding: 5px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.2);
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+/* ends here time section */
+.todoaddcontainer {
+  width: 100%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo {
+  width: 70%;
+  height: 100%;
+  border-radius: 30px;
+  border: none;
+  font-size: 20px;
+  padding: 2px;
+  /* margin: auto; */
+}
+.addbtn {
+  width: 8%;
+  height: 90%;
+  border-radius: 50%;
+  margin-left: 5%;
+  background: none;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  color: white;
+  font-weight: bolder;
+  font-size: 30px;
+}
+.tdcont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+.newtodo {
+  width: 78%;
+  height: fit-content;
+  border-radius: 20px;
+  background-color: transparent;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 20px;
+
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.del {
+  /* width: 40px;
+  height: 30px; */
+  /* background: none;
+  border: none; */
+  padding: 1%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.todotext {
+  width: 85%;
+  padding: 2px;
+  overflow: auto;
+}
+.cardqoute {
+  /* position: relative; */
+  width: 10rem;
+  height: 12rem;
+  /* background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18); */
+}
+#card1 {
+  position: absolute;
+  top: 5rem;
+  left: 10rem;
+  transform: rotate(10deg);
+}
+#card2 {
+  position: absolute;
+  top: 25rem;
+  left: 10rem;
+  transform: rotate(-15deg);
+  /* transform: rotateY(180deg); */
+}
+#card3 {
+  position: absolute;
+  top: 5rem;
+  right: 10rem;
+  transform: rotate(-15deg);
+}
+#card4 {
+  position: absolute;
+  top: 25rem;
+  right: 10rem;
+  transform: rotate(15deg);
+}
+.clock {
+  color: white;
+  font-size: 40px;
+  font-family: Orbitron;
+  letter-spacing: 7px;
+}
+
+/* Card flip css */
+.thecard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  /* padding: 10px; */
+  /* background: yellow; */
+}
+.front {
+  position: absolute;
+  color: white;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.rotate {
+  transform: rotateY(180deg);
+}
+#rotatecard2 {
+  transform: rotate(15deg);
+}
+.back {
+  color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transform: rotateY(180deg);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.text {
+  /* width: 100%; */
+  font-family: "Titillium Web", sans-serif;
+  font-size: 800;
+  font-size: 17px;
+  padding-top: 0.3rem;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.author {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 800;
+  font-size: 17px;
+  margin-top: 0.4rem;
+  padding-left: 1rem;
+}
+.new-quote {
+  border: none;
+  background-color: none;
+  width: 50%;
+  margin: 0px auto 0px auto;
+  padding: 0.2rem;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+  margin-bottom: 0.2rem;
+}
+.textauthor {
+  display: flex;
+  flex-direction: column;
+}
+/* card 3 */
+/* iframe { */
+/* display: none; */
+/* background: red; */
+/* width: 90%;
+  margin: auto; */
+/* } */
+a {
+  display: inline-block;
+  /* margin-bottom: 20px; */
+  color: #000;
+  font-family: Arial, sans-serif;
+}
+
+.embed-container {
+  position: relative;
+  /* padding-bottom: 56.25%; */
+  /* height: 0; */
+  /* overflow: hidden; */
+  /* max-width: 100%; */
+}
+
+.embed-container object,
+.embed-container embed {
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 0; */
+  width: 100%;
+  height: 100%;
+}
+.embed-container iframe {
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+  /* display: none; */
+}
+.material-icons {
+  font-size: 36px;
+  color: #b0bec5;
+}
+
+.material-icons:hover {
+  color: #455a64;
+}
+.musiccontrols {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* text-editor css */
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  /* background: #333;   */
+  color: #33383d;
+  -webkit-font-smoothing: antialiased;
+}
+
+#page-wrapper {
+  width: 960px;
+  background: #fff;
+  padding: 1.25rem;
+  margin: 1rem auto;
+  min-height: 300px;
+  border-top: 5px solid #69c773;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  /* z-index: 9; */
+}
+
+.title {
+  margin: 0;
+  color: white;
+}
+
+.filetitle {
+  margin-top: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+}
+
+/* p {
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1.5rem 0;
+} */
+
+a,
+a:visited {
+  color: #08c;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #69c773;
+  cursor: pointer;
+}
+
+a.delete-file,
+a.delete-file:visited {
+  color: #cc0000;
+  margin-left: 0.5rem;
+}
+
+#file-form {
+  width: 650px;
+  float: left;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+textarea {
+  min-height: 300px;
+}
+
+.submit {
+  display: inline-block;
+  border-radius: 3px;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.6rem 1em;
+  background: #86b32d;
+  border-bottom: 1px solid #5d7d1f;
+  color: black;
+  margin: 0 0.25rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.submit:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+#files {
+  width: 230px;
+  float: right;
+}
+
+#files ul {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  height: 330px;
+  overflow-y: auto;
+  list-style: none;
+  background: #f7f7f7;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#files li {
+  padding: 0.5rem 0;
+}
+
+#messages {
+  display: inline-block;
+  font-weight: bold;
+  color: #69c773;
+  margin-left: 1rem;
+}
+
+/* Clearfix Utils */
+
+.clearfix {
+  *zoom: 1;
+  display: none;
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.show {
+  display: block;
+}
+.close {
+  margin-left: 96%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-size: 30px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+}
+.close:hover {
+  background: rgba(255, 255, 255, 0.192);
+}
+.fa-window-close {
+  color: blue;
+  /* z-index: 9; */
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* text-editor css ends here */
+
+.card2button {
+  background: none;
+  border: none;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  font-family: "Zen Tokyo Zoo", cursive;
+}
+.card4button {
+  background: none;
+  border: none;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  font-family: "Zen Tokyo Zoo", cursive;
+}
