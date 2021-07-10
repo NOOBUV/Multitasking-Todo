@@ -215,10 +215,6 @@ const displayQuote = () => {
   let quote = data[index].text;
   let author = data[index].author;
 
-  if (quote.length > 90) {
-    displayQuote();
-  }
-
   if (!author) {
     author = "Anonymous";
   }
@@ -576,6 +572,7 @@ function pad(n) {
 // card4infobtn eventlistener
 var info = document.querySelector(".card4infobtn");
 var imgclass = document.querySelector(".pomoimg");
-info.addEventListener("click", (e) => {
-  imgclass.classList.toggle("show");
+info.addEventListener("click", () => {
+  console.log("hello");
+  imgclass.classList.toggle("hide");
 });
