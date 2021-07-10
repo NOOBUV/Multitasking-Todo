@@ -8,9 +8,15 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <!-- Font-awesome Link -->
+    <script
+      src="https://kit.fontawesome.com/a1c21ab3f6.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
   </head>
+
   <body onload="initClock()">
     <div class="container">
       <div class="timecontainer">
@@ -95,9 +101,15 @@
     <div class="cardqoute" id="card4">
       <div class="thecard card4thecard">
         <div class="front">
-          <button class="card4button">Whiteboard!</button>
+          <button class="card4button">Timer!</button>
         </div>
-        <div class="back"></div>
+        <div class="back">
+          <input type="hidden" id="set-time" value="25" />
+          <div id="countdown">
+            <div id="tiles" class="color-full"></div>
+            <div class="countdown-label">Time Remaining</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -135,6 +147,11 @@
     </div>
 
     <!-- text-editor code ends here -->
+
+    <!-- white board code starts  -->
+
+    <!-- white board code ends -->
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="script.js"></script>
 </html>
