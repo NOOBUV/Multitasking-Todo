@@ -572,3 +572,10 @@ function getCountdown() {
 function pad(n) {
   return (n < 10 ? "0" : "") + n;
 }
+
+// card4infobtn eventlistener
+var info = document.querySelector(".card4infobtn");
+var imgclass = document.querySelector(".pomoimg");
+info.addEventListener("click", (e) => {
+  imgclass.classList.toggle("show");
+});
